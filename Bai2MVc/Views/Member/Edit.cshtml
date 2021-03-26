@@ -1,0 +1,34 @@
+
+@model Bai2MVc.Models.Members;
+
+<form asơ-asp-controller="Member" asp-action="Edit" method="POST">
+    <div>   
+        @Html.LabelFor(x=>x.FirstName)
+        @Html.EditorFor(x=>x.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.LastName)
+        @Html.EditorFor(x=>x.LastName)
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.Gender)
+        @Html.EditorFor(x=>x.Gender)</div>
+    <div>
+        @Html.LabelFor(x=>x.DateOfBirth)
+        @Html.EditorFor(x=>x.DateOfBirth)
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.Phone)
+        @Html.EditorFor(x=>x.Phone)
+    </div>
+    <div>
+        @Html.LabelFor(x=>x.BirthPlace)
+        @Html.EditorFor(x=>x.BirthPlace)
+    </div>
+    <br/>
+    <input type="submit" value="Edit"/>
+    
+    
+    
+    
+</form>

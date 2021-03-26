@@ -1,0 +1,41 @@
+@using Bai2MVc.Models;
+@model IEnumerable<Members>
+
+
+
+<div>
+<form asp-controller="Member" asp-action="Find" method="POST">
+    <input type="text" name="keyword" placeholder="input first name "/>
+        <input type="submit" value="Find"/>
+</form>
+<form >
+    <a asp-controller="Member" asp-action="Create" method="POST">Create new</a>
+    <table border="1px">
+        <tr>
+            <th>Full name</th>
+            <th>Gender</th>
+            <th>Date of birth</th>
+            <th>Phone</th>
+            <th>Birth place</th>
+            <th></th>
+        </tr>
+    @foreach(var item in Model){
+        <tr>
+            <td>@item.FirstName @item.LastName</td>
+            <td>@item.Gender</td>
+            <td>@item.DateOfBirth</td>
+            <td>@item.Phone</td>
+            <td>@item.BirthPlace</td>
+            <td>@Html.ActionLink("Edit","Edit","Member", new{firstname=item.FirstName,lastname=item.LastName}) @Html.ActionLink("Delete","Delete","Member", new{firstname=item.FirstName,lastname=item.LastName})</td>
+        </tr>
+    }    
+       
+    </table>    
+</form>
+    
+</div>
+<style>
+    th{
+        text-align: center;
+    }
+</style>
