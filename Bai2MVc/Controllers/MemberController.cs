@@ -26,11 +26,11 @@ namespace Bai2MVc.Controllers
             members.Add(abc);
             return RedirectToAction("Details");
         }
+        [Authorize("Admin,read")]
         public IActionResult Details(){
-
-                                                           
             return View(members);
         }
+        [Authorize("Write,Admin")]
         public IActionResult Edit(string firstname,string lastname){
             Members a = members.SingleOrDefault(x=> x.FirstName == firstname&&x.LastName == lastname);
             return View(a);
